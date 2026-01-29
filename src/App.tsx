@@ -1,6 +1,7 @@
 import { Container } from "./components/Container";
-import { Heading } from "./components/Heading";
+import { CountDown } from "./components/CountDown";
 import { Logo } from "./components/Logo";
+import { Menu } from "./components/Menu";
 
 import "./styles/global.css";
 import "./styles/theme.css";
@@ -11,9 +12,37 @@ export function App() {
       <Container>
         <Logo />
       </Container>
+
+      <Container>
+        <Menu />
+      </Container>
+
+      <Container>
+        <CountDown />
+      </Container>
       
       <Container>
-        <Heading>MENU</Heading>
+        <form className="form" action="">
+          <div className="formRow">
+            <label htmlFor="meuInput">task</label>
+            <input type="text" id="meuInput" />
+          </div>
+
+          <div className="formRow">
+            <p>
+              Lorem ipsum dolor sit amet.
+            </p> 
+          </div>
+
+          <div className="formRow">
+            <p>Clicos</p> 
+            <p>0 0 0 0 0 0 0 0</p>
+          </div>
+
+          <div className="formRow">
+            <button>Enviar</button>
+          </div>
+        </form>
       </Container>
     </>
   );
