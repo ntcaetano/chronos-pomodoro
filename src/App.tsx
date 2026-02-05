@@ -1,3 +1,6 @@
+import "./styles/global.css";
+import "./styles/theme.css";
+
 import { PlayCircleIcon } from "lucide-react";
 import { Container } from "./components/Container";
 import { CountDown } from "./components/CountDown";
@@ -6,25 +9,11 @@ import { DefaultButton } from "./components/DefaltButton";
 import { DefaultInput } from "./components/DefaultInput";
 import { Logo } from "./components/Logo";
 import { Menu } from "./components/Menu";
-
-import "./styles/global.css";
-import "./styles/theme.css";
 import { Footer } from "./components/Footer";
-import { Heading } from "./components/Heading";
-import { useState } from "react";
 
 export function App() {
-  const [numero, setNumero] = useState(0);
-
-  function handleClick() {
-    setNumero(prevState  => prevState + 1);
-  }
-
   return (
     <>
-      <Heading>Número :{numero}</Heading>
-      <button onClick={handleClick}>Aumenta</button>
-
       <Container>
         <Logo />
       </Container>
@@ -41,7 +30,7 @@ export function App() {
         <form className="form" action="">
           <div className="formRow">
             <DefaultInput
-              labelText={numero.toString()}
+              labelText="task"
               id="meuInput"
               type="text"
               placeholder="Digite algo"
