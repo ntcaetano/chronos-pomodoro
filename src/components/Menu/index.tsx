@@ -7,14 +7,21 @@ type AvailableTheme = "dark" | "light";
 export function Menu() {
   const [theme, setTheme] = useState<AvailableTheme>("dark");
 
-  function handleThemeChange(event: React.MouseEvent<HTMLAnchorElement , MouseEvent>) {
+  function handleThemeChange(
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+  ) {
     event.preventDefault();
-    console.log('Cliclado', Date.now());
+    console.log("Cliclado", Date.now());
+
+    setTheme((prevTheme) => {
+      const nextTheme = prevTheme === "dark" ? "light" : "dark";
+      return nextTheme;
+    });
   }
 
   return (
     <nav className={styles.menu}>
-      <h1>Dark</h1>
+      <h1>{theme}</h1>
       <a
         className={styles.menuLink}
         href="#"
